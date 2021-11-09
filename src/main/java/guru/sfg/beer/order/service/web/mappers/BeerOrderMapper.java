@@ -20,11 +20,14 @@ package guru.sfg.beer.order.service.web.mappers;
 import guru.sfg.beer.order.service.domain.BeerOrder;
 import guru.sfg.beer.order.service.web.model.BeerOrderDto;
 import org.mapstruct.Mapper;
+import org.mapstruct.ObjectFactory;
 
 @Mapper(uses = {DateMapper.class, BeerOrderLineMapper.class})
 public interface BeerOrderMapper {
 
+    @ObjectFactory
     BeerOrderDto beerOrderToDto(BeerOrder beerOrder);
 
+    @ObjectFactory
     BeerOrder dtoToBeerOrder(BeerOrderDto dto);
 }
